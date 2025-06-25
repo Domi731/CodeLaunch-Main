@@ -69,12 +69,8 @@ const CodeLauncher = () => {
   ];
 
   const handleLaunch = () => {
-    if (selectedProject) {
-      const project = launchableProjects.find(p => p.id === selectedProject);
-      if (project) {
-        window.open(project.url, '_blank', 'noopener,noreferrer');
-      }
-    }
+    // Redirect to your original website instead of the selected project
+    window.open('https://domi731.github.io/CodeLaunch/', '_blank', 'noopener,noreferrer');
   };
 
   const selectedProjectInfo = launchableProjects.find(p => p.id === selectedProject);
@@ -130,23 +126,18 @@ const CodeLauncher = () => {
 
               <button
                 onClick={handleLaunch}
-                disabled={!selectedProject}
-                className={`w-full py-4 px-6 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all duration-300 ${
-                  selectedProject
-                    ? 'bg-gradient-launch text-white hover:shadow-lg hover:shadow-launch-blue/25 hover:scale-105'
-                    : 'bg-gray-700 text-gray-400 cursor-not-allowed'
-                }`}
+                className="w-full py-4 px-6 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all duration-300 bg-gradient-launch text-white hover:shadow-lg hover:shadow-launch-blue/25 hover:scale-105"
               >
                 <Play size={24} />
-                {selectedProject ? 'Projekt starten' : 'Projekt auswählen'}
+                Zur originalen CodeLaunch Website
               </button>
             </div>
           </div>
 
           <div className="mt-8 text-center">
             <p className="text-gray-400 text-sm">
-              💡 Tipp: Alle Projekte öffnen sich in einem neuen Tab, 
-              sodass du CodeLaunch weiterhin nutzen kannst.
+              💡 Tipp: Der Button führt dich zur originalen CodeLaunch Website, 
+              wo du alle Projekte direkt starten kannst.
             </p>
           </div>
         </div>
