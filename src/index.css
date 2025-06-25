@@ -1,12 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 220 13% 91%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -37,19 +37,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -98,6 +91,24 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-dark text-white font-inter antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-gray-300 hover:text-launch-blue transition-colors duration-300 font-medium;
+  }
+  
+  .launch-button {
+    @apply bg-gradient-launch text-white font-semibold px-6 py-3 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 animate-pulse-glow;
+  }
+  
+  .project-card {
+    @apply bg-tech-gray border border-gray-800 rounded-xl p-6 hover:border-launch-blue hover:shadow-lg hover:shadow-launch-blue/20 transition-all duration-300 hover:-translate-y-1;
   }
 }
